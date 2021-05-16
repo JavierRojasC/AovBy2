@@ -1,12 +1,12 @@
-\name{hello}
-\alias{hello}
-\title{Hello, World!}
+\name{aovby}
+\alias{aovby}
+\title{Classic and Bayesian Panel}
 \usage{
-hello()
+aovby()
 }
 \description{
-Prints 'Hello, world!'.
+Show a shiny panel with bayesian and classic analysis of variance.
 }
 \examples{
-hello()
+aovby()
 }
