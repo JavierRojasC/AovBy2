@@ -16,8 +16,8 @@ aovbay <- function(dataset=FALSE) {
   require(reshape)
   require(purrr)
 
-
-
+  options(mc.cores = parallel::detectCores())
+  rstan_options(auto_write = TRUE)
   Model <- "data {
           int<lower=0> N;
           int<lower=0> J;
