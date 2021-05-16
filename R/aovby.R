@@ -15,7 +15,12 @@ aovbay <- function(dataset=FALSE) {
   require(rstan)
   require(reshape)
   require(purrr)
-
+  dir.create("~/.R", showWarnings = FALSE)
+  cat("CXX = clang++",
+      "CXXFLAGS = -g0 -Os -march=native -mtune=native",
+      file = "~/.R/Makevars",
+      sep = "\n")
+  Sys.setenv(R_MAKEVARS_USER = normalizePath("~/.R/Makevars"))
   options(mc.cores = parallel::detectCores())
   rstan_options(auto_write = TRUE)
   Model <- "data {
