@@ -16,9 +16,7 @@ aovbay <- function(dataset=FALSE) {
   require(reshape)
   require(purrr)
 
-  dir.create("~/.R", showWarnings = FALSE)
-  cat("CXX = clang++", "CXXFLAGS = -g0 -Os -march=native -mtune=native", file = "~/.R/Makevars", sep = "\n")
-  Sys.setenv(R_MAKEVARS_USER = normalizePath("~/.R/Makevars"))
+
 
   Model <- "data {
           int<lower=0> N;
