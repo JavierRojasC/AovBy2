@@ -1,12 +1,12 @@
-\name{aovby}
-\alias{aovby}
+\name{aovbay}
+\alias{aovbay}
 \title{Classic and Bayesian Panel}
 \usage{
-aovby()
+aovbay()
 }
 \description{
 Show a shiny panel with bayesian and classic analysis of variance.
 }
 \examples{
-aovby()
+aovbay()
 }
