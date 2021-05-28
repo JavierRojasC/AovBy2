@@ -1,1 +1,5 @@
 exportPattern("^[[:alpha:]]+")
+import(Rcpp)
+import(methods)
+importFrom(rstan,sampling)
+useDynLib(AovBY, .registration = TRUE)
