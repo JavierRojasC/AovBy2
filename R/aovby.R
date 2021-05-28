@@ -1364,4 +1364,3 @@ aovbay <- function(dataset=FALSE) {
     })
   runApp(app)
 }
-aovbay(Data)
