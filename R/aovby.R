@@ -15,20 +15,22 @@ aovbay <- function(dataset=FALSE) {
   require(rstan)
   require(reshape)
   require(purrr)
-  dotR <- file.path(Sys.getenv("HOME"), ".R")
-  if (!file.exists(dotR)) dir.create(dotR)
-  MAKEVARS <- file.path(dotR, "Makevars")
-  if (!file.exists(MAKEVARS)) file.create(MAKEVARS)
 
-  cat(
-    "\nCXXFLAGS=-Os -mtune=native -march=native",
-    "CXXFLAGS += -Wno-unused-variable -Wno-unused-function  -Wno-unknown-pragmas",
-    "CXX=clang++",
-    file = MAKEVARS,
-    sep = "\n",
-    append = TRUE
-  )
-  Sys.setenv(R_MAKEVARS_USER = "/read-only/path/to/Makevars")
+ # dotR <- file.path(Sys.getenv("HOME"), ".R")
+ # if (!file.exists(dotR)) dir.create(dotR)
+ # MAKEVARS <- file.path(dotR, "Makevars")
+ # if (!file.exists(MAKEVARS)) file.create(MAKEVARS)
+#
+ # cat(
+ #   "\nCXXFLAGS=-Os -mtune=native -march=native",
+ #   "CXXFLAGS += -Wno-unused-variable -Wno-unused-function  -Wno-unknown-pragmas",
+ #   "CXX=clang++",
+ #   file = MAKEVARS,
+ #   sep = "\n",
+ #   append = TRUE
+
+ # )
+ # Sys.setenv(R_MAKEVARS_USER = "/read-only/path/to/Makevars")
 
   Model <- "data {
           int<lower=0> N;
@@ -1362,4 +1364,4 @@ aovbay <- function(dataset=FALSE) {
     })
   runApp(app)
 }
-
+aovbay(Data)
